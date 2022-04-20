@@ -12,6 +12,7 @@ struct AppSUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ProfileViewModel())
         }
     }
 }
