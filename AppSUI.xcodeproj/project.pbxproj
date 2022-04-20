@@ -60,11 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				1F3997B9280EE191008E3134 /* AppSUIApp.swift */,
+				1F3997C7280EE37E008E3134 /* DashboardScreen.swift */,
 				1F3997BB280EE191008E3134 /* ContentView.swift */,
+				1FDEE7532810229D00ACAEFE /* ListScreen.swift */,
 				1F3997CB280EE3D4008E3134 /* ProfileScreen.swift */,
 				1F3997C9280EE3BE008E3134 /* CatalogScreen.swift */,
-				1F3997C7280EE37E008E3134 /* DashboardScreen.swift */,
-				1FDEE7532810229D00ACAEFE /* ListScreen.swift */,
 				1F3997BD280EE196008E3134 /* Assets.xcassets */,
 				1F3997BF280EE196008E3134 /* Preview Content */,
 			);

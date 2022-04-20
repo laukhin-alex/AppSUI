@@ -16,7 +16,7 @@ struct ListScreen: View {
     var body: some View {
         VStack {
             Image(systemName: "face.smiling.fill").font(.largeTitle)
-            Spacer().frame(height: -20)
+            
             NavigationView {
                 List(0..<5) { textField in
 
