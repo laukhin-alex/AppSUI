@@ -19,18 +19,25 @@ struct ContentView: View {
                     Text("Start")
                 }
                 .tag(0)
+            ListScreen()
+                .tabItem {
+                    Image(systemName: "list.number")
+                    Text("List")
+                }
+                .tag(1)
             CatalogScreen()
                 .tabItem {
                         Image(systemName: "books.vertical")
                         Text("Catalog")
                 }
-                .tag(1)
+                .tag(2)
             ProfileScreen()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
                 }
                 .tag(2)
+
         }
     }
 }
