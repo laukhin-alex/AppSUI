@@ -10,16 +10,17 @@ import SwiftUI
 struct ContentView: View {
 
     @State private var selection = 0
+    var navigationManager = NavigationManager()
 
     var body: some View {
         TabView(selection: $selection) {
-            DashboardScreen()
+            DashboardScreen(selection: $selection)
                 .tabItem {
                     Image(systemName: "star")
                     Text("Start")
                 }
                 .tag(0)
-            ListScreen()
+            ListScreen( manager: navigationManager)
                 .tabItem {
                     Image(systemName: "list.number")
                     Text("List")
@@ -29,12 +30,6 @@ struct ContentView: View {
                 .tabItem {
                         Image(systemName: "books.vertical")
                         Text("Catalog")
-                }
-                .tag(2)
-            ProfileScreen()
-                .tabItem {
-                    Image(systemName: "person")
-                    Text("Profile")
                 }
                 .tag(2)
 

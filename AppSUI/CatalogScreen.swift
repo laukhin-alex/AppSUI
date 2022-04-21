@@ -7,9 +7,34 @@
 
 import SwiftUI
 
+//final class ProfileViewModel: ObservableObject {
+//
+//    @Published var isModal: Bool = false
+//
+//}
+
 struct CatalogScreen: View {
+    @State private var showsDetailViewController = false
+
+
     var body: some View {
-        Text("CatalogScreen")
+
+        NavigationView {
+            VStack {
+                Button(action: {
+                    self.showsDetailViewController = true
+                }) {
+                    Text("Модальное окно")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.green)
+                }
+                .navigationTitle("Таб 3")
+            }
+        }.sheet(isPresented: $showsDetailViewController) {
+            Text("hi! Modal!!!!")
+
+        }
     }
 }
 

@@ -7,47 +7,62 @@
 
 import SwiftUI
 
+
+struct face: View {
+    
+    var body: some View {
+        Image(systemName: "face.smiling.fill").font(.largeTitle)
+    }
+}
+
 struct ListScreen: View {
 
     @State var isNavigate: Bool = false
-
-    @StateObject var viewModel: ProfileViewModel = .init()
+    @ObservedObject var manager: NavigationManager
+    
 
     var body: some View {
+
         VStack {
-            Image(systemName: "face.smiling.fill").font(.largeTitle)
+
             
             NavigationView {
-                List(0..<5) { textField in
+                List {
+
 
                     ScrollView {
                         NavigationLink(
-                            destination: SwiftUI.Text("Destination"),
-                            isActive: $isNavigate,
+                            destination: Text("Destination"),
+                            isActive: $manager.goToThird,
                             label:  {
-                                SwiftUI.Text("Navigation")
+                                Text("Navigation")
                                 Image(systemName: "lasso").font(.largeTitle)
                             })
-                        Spacer().frame(height: 10)
+                Divider()
+                        ScrollView {
+                            NavigationLink(
+                                destination: Text("Application"),
+                                isActive: $isNavigate,
+                                label:  {
+                                    Text("Application").lineLimit(1)
+//                                    Spacer().frame(width: 200)
+                                    Image(systemName: "applescript.fill").font(.largeTitle).frame( alignment: .trailing)
+                                })
+                            Spacer().frame(height: 10)
 
+
+                                .navigationTitle("Таб 2")
+                        }
                     }
-
-                }.onAppear {
-                    print("PersonInfoView is appeared")
-                }.onDisappear {
-                    print("PersonInfoView is disappeared")
                 }
 
             }
         }
-
     }
 }
 
-
-
-struct ListScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ListScreen()
-    }
-}
+//struct ListScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListScreen()
+//    }
+//}
