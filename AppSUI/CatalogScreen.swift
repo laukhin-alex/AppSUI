@@ -23,16 +23,19 @@ struct CatalogScreen: View {
             VStack {
                 Button(action: {
                     self.showsDetailViewController = true
+                    print("modal")
                 }) {
                     Text("Модальное окно")
                         .padding()
                         .foregroundColor(.white)
                         .background(Color.green)
                 }
+                .padding()
                 .navigationTitle("Таб 3")
             }
         }.sheet(isPresented: $showsDetailViewController) {
             Text("hi! Modal!!!!")
+
 
         }
     }

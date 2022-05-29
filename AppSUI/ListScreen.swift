@@ -8,6 +8,7 @@
 import SwiftUI
 
 
+
 struct face: View {
     
     var body: some View {
@@ -38,6 +39,7 @@ struct ListScreen: View {
                                 Text("Navigation")
                                 Image(systemName: "lasso").font(.largeTitle)
                             })
+                        
                 Divider()
                         ScrollView {
                             NavigationLink(
